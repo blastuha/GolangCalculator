@@ -9,12 +9,14 @@ import (
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
+	// bufio используется для считывания данных из ввода
+	// os.Stdin используется для считывания данных с клавиатуры
+	scanner := bufio.NewScanner(os.Stdin) // получаем сканер, используя пакет bufio + os.Stdin
 	fmt.Println("Введите выражение (например, 5 + 3):")
-	scanner.Scan()
-	inputString := scanner.Text()
+	scanner.Scan()                // ожидаем ввод с клавиатуры
+	inputString := scanner.Text() // записываем введеную строку с клавы в переменную
 
-	valuesArray := strings.Fields(inputString)
+	valuesArray := strings.Fields(inputString) // пр
 	if len(valuesArray) != 3 {
 		fmt.Println("Неверный формат ввода.")
 		return
