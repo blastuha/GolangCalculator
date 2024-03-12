@@ -138,3 +138,5 @@ func main() {
 		fmt.Printf("Ваш результат: %d\n", result)
 	}
 }
+
+// qwerty
