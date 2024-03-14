@@ -81,7 +81,7 @@ func main() {
 
 	valuesArray := strings.Fields(inputString)
 	if len(valuesArray) != 3 {
-		fmt.Println("Неверный формат ввода")
+		panic("Неверный формат ввода")
 		return
 	}
 
@@ -103,7 +103,7 @@ func main() {
 	}
 
 	if err1 != nil || err2 != nil || inputValue1 < 1 || inputValue1 > 10 || inputValue2 < 1 || inputValue2 > 10 {
-		fmt.Println("Числа должны быть в диапазоне от 1 до 10!")
+		panic("Числа должны быть в диапазоне от 1 до 10!")
 		return
 	}
 
@@ -116,13 +116,13 @@ func main() {
 		result = inputValue1 * inputValue2
 	case "/":
 		if inputValue2 == 0 {
-			fmt.Println("На ноль делить нельзя!")
+			panic("На ноль делить нельзя!")
 			return
 		} else {
 			result = inputValue1 / inputValue2
 		}
 	default:
-		fmt.Println("Неверный оператор")
+		panic("Неверный оператор")
 		return
 	}
 
@@ -130,7 +130,7 @@ func main() {
 	if isRoman1 && isRoman2 {
 		romanResult, err := arabicToRoman(result)
 		if err != nil {
-			fmt.Println("Ошибка вычисления.")
+			panic("Ошибка вычисления.")
 			return
 		}
 		fmt.Printf("Ваш результат: %s\n", romanResult)
